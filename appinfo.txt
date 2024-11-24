@@ -1,0 +1,4 @@
+Market Prediction Website
+
+The Market Fluctuation Prediction website contains the option to provide the market data that needs to predict the next trend. If the entered value for the market (in our case ROMANIA) is grater than 100 then the market will rise, otherwise it will fall.
+

@@ -14,6 +14,6 @@ document.getElementById("predictButton").addEventListener("click", function () {
 
 function predictTrend(marketValue) {
     // Simple example of fluctuation prediction logic
-    const fluctuation = Math.random() > 0.5 ? "Rise" : "Fall";  // Random rise or fall
+    const fluctuation = Math.random() > 100 ? "Rise" : "Fall";  // Random rise or fall
     return `Market is likely to ${fluctuation} based on the current value of ${marketValue}.`;
 }

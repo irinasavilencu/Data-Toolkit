@@ -3,7 +3,7 @@ document.getElementById("predictButton").addEventListener("click", function () {
     const marketValue = document.getElementById("marketValue").value;
     
     if (marketValue === "") {
-        alert("Please enter a market value.");
+        alert("Please enter a volatility index value.");
         return;
     }
     
@@ -13,7 +13,18 @@ document.getElementById("predictButton").addEventListener("click", function () {
 });
 
 function predictTrend(marketValue) {
-    // Simple example of fluctuation prediction logic
-    const fluctuation = Math.random() > 100 ? "Rise" : "Fall";  // Random rise or fall
-    return `Market is likely to ${fluctuation} based on the current value of ${marketValue}.`;
+    // Determine the market value trend based on given criteria
+    let fluctuation;
+
+    if (marketValue >= 0 && marketValue <= 12) {
+        fluctuation = "Low";
+    } else if (marketValue >= 13 && marketValue <= 19) {
+        fluctuation = "Medium";
+    } else if (marketValue >= 20) {
+        fluctuation = "High";
+    } else {
+        fluctuation = "Invalid VIX value"; // In case marketValue is negative or unexpected
+    }
+
+    return `Market is likely to trend as ${fluctuation} for the next 30 days.`;
 }
